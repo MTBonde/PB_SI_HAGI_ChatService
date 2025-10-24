@@ -44,6 +44,22 @@ try
         durable: true,
         autoDelete: false);
     Console.WriteLine("Declared exchange: chat.topic (topic)");
+    
+    // Declare exchange: relay.chat.private (direct)
+    await channel.ExchangeDeclareAsync(
+        exchange: "relay.chat.private",
+        type: ExchangeType.Direct,
+        durable: true,
+        autoDelete: false);
+    Console.WriteLine("Declared exchange: relay.chat.private (direct, durable)");
+
+    // Declare exchange: relay.chat.global (fanout)
+    await channel.ExchangeDeclareAsync(
+        exchange: "relay.chat.global",
+        type: ExchangeType.Fanout,
+        durable: true,
+        autoDelete: false);
+    Console.WriteLine("Declared exchange: relay.chat.global (fanout, durable)");
 
     Console.WriteLine("ChatService is running. Press Ctrl+C to exit.");
 
