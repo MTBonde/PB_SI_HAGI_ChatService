@@ -164,6 +164,16 @@ public class RelayMessage
     /// Gets or sets the message content.
     /// </summary>
     public string Content { get; set; } = string.Empty;
+    
+    // /// <summary>
+    // /// Gets or sets the username of the user who sent the message.
+    // /// </summary>
+    public string Username { get; set; } = string.Empty;
+
+    // /// <summary>
+    // /// Gets or sets the role of the user who sent the message.
+    // /// </summary>
+    public string Role { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the timestamp when the message was created.
@@ -175,14 +185,4 @@ public class RelayMessage
     // /// Gets or sets the unique identifier of the user who sent the message.
     // /// </summary>
     // public string UserId { get; set; } = string.Empty;
-
-    // /// <summary>
-    // /// Gets or sets the username of the user who sent the message.
-    // /// </summary>
-    // public string Username { get; set; } = string.Empty;
-
-    // /// <summary>
-    // /// Gets or sets the role of the user who sent the message.
-    // /// </summary>
-    // public string UserRole { get; set; } = string.Empty;
 }
