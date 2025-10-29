@@ -12,7 +12,6 @@ Console.WriteLine($"Connecting to RabbitMQ at {rabbitMqHost}...");
 
 var rabbitProbe = new RabbitMqProbe(rabbitMqHost, 5672);
 await HagiRobust.WaitForDependenciesAsync(new[] { rabbitProbe });
-
 Console.WriteLine("RabbitMQ is ready!");
 
 try
