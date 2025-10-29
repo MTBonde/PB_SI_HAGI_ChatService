@@ -1,12 +1,19 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
+using Hagi.Robust;
+using Hagi.Robust.Probes;
 
 Console.WriteLine($"ChatService v{ChatService.ServiceVersion.Current} starting...");
 
 var rabbitMqHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost";
 
 Console.WriteLine($"Connecting to RabbitMQ at {rabbitMqHost}...");
+
+var rabbitProbe = new RabbitMqProbe(rabbitMqHost, 5672);
+await HagiRobust.WaitForDependenciesAsync(new[] { rabbitProbe });
+
+Console.WriteLine("RabbitMQ is ready!");
 
 try
 {

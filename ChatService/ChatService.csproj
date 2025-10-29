@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+      <PackageReference Include="HAGI.Robust" Version="1.1.0" />
       <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
   </ItemGroup>
 
